@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-sm-12">
+        <h1>Create a new board :</h1>
+        <button class="btnAddBoard" mat-raised-button (click)="createBoard()">New Board</button>
+    </div>
+</div>
+<div *ngIf="dontHide(dataOwn)">
+    <h2>Boards you own :</h2>
+    <div class="boardsOwned">
+        <mat-card *ngFor="let board of dataOwn" class="card">
+            <mat-card-header>
+                <mat-card-title> {{board?.name}}</mat-card-title>
+                <mat-card-subtitle>Click on image to go to board</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image [routerLink]='["/boards",board.id]' src="https://www.milome.fr/11127-large_default/tableau-moderne-antalya-40x40-cm.jpg" alt="Board's image">
+            <mat-card-actions>
+                <button mat-icon-button><mat-icon (click)="edit(board)">edit</mat-icon></button>
+                <button mat-icon-button><mat-icon (click)="delete(board)">delete</mat-icon></button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
+<br>
+<br>
+<div *ngIf="dontHide(dataCollabs)">
+    <h2>Boards you are in collab with :</h2>
+    <div class="boardsCollabs">
+        <mat-card *ngFor="let board of dataCollabs" class="card">
+            <mat-card-header>
+                <mat-card-title> {{board?.name}}</mat-card-title>
+                <mat-card-subtitle>Click on image to go to board</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image [routerLink]='["/boards",board.id]' src="https://www.milome.fr/11127-large_default/tableau-moderne-antalya-40x40-cm.jpg" alt="Board's image">
+        </mat-card>
+    </div>
+</div>

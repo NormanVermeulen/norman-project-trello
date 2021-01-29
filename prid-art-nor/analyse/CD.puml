@@ -1,0 +1,67 @@
+@startuml
+
+title Diagramme de classes
+
+package model{
+
+    class User {
+        - int id
+        - string pseudo
+        - string password
+        - string email
+        - string firstName
+        - string lastName
+        - enum role
+        - string token
+        + add()
+        + update()
+        + delete()
+    }
+
+    class Board {
+        - int id
+        - string name
+        - User owner
+        - picture wallPaper
+        - List<User> collaboraters
+        - List<List> lists
+        + add()
+        + update()
+        + delete()
+    }
+
+    class List {
+        - int id
+        - string name
+        - User author
+        - list<card> cards
+        + add()
+        + update()
+        + delete()
+        + dragAndDrop()
+    }
+
+    class Card {
+        - int id
+        - string name
+        - User author
+        - list<User> participaters
+        + add()
+        + update()
+        + delete()
+        + dragAndDrop()
+    }
+}
+User "1" *-- "*" Board : owns
+User "1" *-- "*" List : owns
+User "*" -- "*" Board : collaborates
+Board "1" *-- "*" List : contains
+List "1" *-- "*" Card : contains
+User "1" *-- "*" Card : authors
+User "*" -- "*" Card : participates
+
+Card -right- User
+Board -up- User
+Board -right- List
+
+@enduml

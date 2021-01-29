@@ -1,0 +1,44 @@
+<header>
+    <div class="topContainer">
+        <h1>{{board?.name}} owned by : {{owner?.pseudo}} </h1>
+        <button class="btnNewList" mat-raised-button color="primary" (click)="showList = !showList">New List</button>
+        <input *ngIf="showList" #boxList (keyup.enter)="createList(boxList.value)" (keyup.enter)="showList = !showList" maxlength="20" placeholder="Add list name">{{value}}
+    </div>
+</header>
+
+<body>
+    <div cdkDropListGroup>
+        <div class="example-container" *ngFor='let list of lists; ; let i = index'>
+            <div class="containerList">
+                <div class="cardButtonsContainer">
+                    <h2>
+                        <span contenteditable [textContent]="list.name" (input)="list.name = $event.target.textContent" (click)="updateListName($event,list)"></span>
+                    </h2>
+                    <button mat-icon-button tabindex="-1"><mat-icon (click)="deleteList(list)">delete</mat-icon></button>
+                    <button mat-icon-button tabindex="-1" *ngIf="!isFirst(list)"><mat-icon (click)="moveList(lists[i], lists[i-1])">arrow_back_ios</mat-icon></button>
+                    <button mat-icon-button tabindex="-1" *ngIf="!isLast(list)"><mat-icon (click)="moveList(lists[i], lists[i+1])">arrow_forward_ios</mat-icon></button>
+                </div>
+                <div cdkDropList [cdkDropListData]="list.cards" class="example-list" (cdkDropListDropped)="drop($event,list)">
+                    <div class="example-box" [cdkDragData]='card' *ngFor="let card of list.cards" cdkDrag>
+                        {{card?.name}}
+                        <div class="cardButtonsContainer">
+                            <button mat-icon-button tabindex="-1">
+                    <mat-icon (click)="editCard(card)">edit</mat-icon>
+                </button>
+                            <button mat-icon-button tabindex="-1">
+                    <mat-icon (click)="deleteCard(card)">delete</mat-icon>
+                </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="newCard">
+                    <button class="btnNewCard" mat-raised-button (click)="showCard[i] = !showCard[i]">New Card</button>
+                    <div *ngIf="showCard[i]">
+                        <input class="boxCard" #boxCard (keyup.enter)="createCard(boxCard.value, list.id)" maxlength="20" (keyup.enter)="showCard[i] = !showCard[i]" placeholder="add name"> {{value}}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>

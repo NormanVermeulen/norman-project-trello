@@ -1,0 +1,41 @@
+mat-card-title::first-letter {
+    text-transform: uppercase;
+}
+
+.mat-card-title {
+    text-transform: lowercase;
+}
+
+.boardsOwned {
+    width: auto;
+    display: inline-flex;
+    flex-flow: row wrap;
+    position: relative;
+}
+
+.boardsCollabs {
+    width: auto;
+    display: inline-flex;
+    flex-flow: row wrap;
+    position: relative;
+}
+
+.btnAddBoard {
+    color: white;
+    background-color: #e8a037;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.card {
+    padding: auto;
+    width: 250px;
+}
+
+.btnContainer {
+    padding: 10px;
+}
+
+.row {
+    margin-bottom: 20px;
+}

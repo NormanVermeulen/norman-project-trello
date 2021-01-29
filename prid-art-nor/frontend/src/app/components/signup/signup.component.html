@@ -1,0 +1,51 @@
+<form [formGroup]="signupForm">
+    <h1>Sign Up</h1>
+    <mat-form-field>
+        <input #pseudo matInput placeholder="Pseudo" [formControl]="ctlPseudo" required appSetFocus>
+        <mat-error class="field-error" *ngIf="ctlPseudo.hasError('required')"> Required</mat-error>
+        <mat-error class="field-error" *ngIf="ctlPseudo.hasError('pseudoUsed')"> Pseudo already used</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type="password" placeholder="Password" [formControl]="ctlPassword" required>
+        <mat-error class="field-error" *ngIf="ctlPassword.hasError('required')"> Required</mat-error>
+        <mat-error class="field-error" *ngIf="ctlPassword.hasError('custom')">{{ctlPassword.errors.custom}}
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type="password" placeholder="Password Confirm" [formControl]="ctlPasswordConfirm" required>
+        <mat-error class="field-error" *ngIf="ctlPasswordConfirm.hasError('required')"> Required</mat-error>
+        <mat-error class="field-error" *ngIf="ctlPasswordConfirm.hasError('custom')">{{ctlPasswordConfirm.errors.custom}}
+        </mat-error>
+    </mat-form-field>
+    <div *ngIf="signupForm.errors && ctlPasswordConfirm.dirty && ctlPasswordConfirm.valid">
+        <mat-error class="float-left" *ngIf="signupForm.hasError('passwordNotConfirmed')"> The passwords don't match</mat-error>
+    </div>
+    <mat-form-field>
+        <input matInput type="text" placeholder="First Name" [formControl]="ctlFirstName" required>
+        <!-- <mat-error class="field-error" *ngIf="ctlFirstName.hasError('required')">Required</mat-error> -->
+        <mat-error class="field-error" *ngIf="ctlFirstName.hasError('lastNameNull')"> A firstname requires a lastname
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input id="lastName" matInput type="text" placeholder="Last Name" [formControl]="ctlLastName" required>
+        <!-- <mat-error class="field-error" *ngIf="ctlLastName.hasError('required')">Required</mat-error> -->
+        <mat-error class="field-error" *ngIf="ctlLastName.hasError('firstNameNull')"> A lastname requires a firstname
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input id="email" matInput type="email" placeholder="Email" [formControl]="ctlEmail" required>
+        <mat-error class="field-error" *ngIf="ctlEmail.hasError('required')"> Required</mat-error>
+        <mat-error class="field-error" *ngIf="ctlEmail.hasError('emailFormat')"> Must fill with an email format
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input id="birthdate" matInput placeholder="Birth Date" [formControl]="ctlBirthDate" type="date">
+        <mat-error class="field-error" *ngIf="ctlBirthDate.hasError('futureBorn')"> Can't be born in the future</mat-error>
+        <mat-error class="field-error" *ngIf="ctlBirthDate.hasError('tooYoung')"> Too young</mat-error>
+    </mat-form-field>
+    <div>
+        <button mat-stroked-button (click)="signup()" [disabled]="signup.invalid">Sign Up</button>
+        <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+        />
+    </div>
+</form>

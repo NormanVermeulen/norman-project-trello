@@ -1,0 +1,37 @@
+<form id="formBoard" class="form" [formGroup]="formBoard" novalidate>
+    <h1 class="header">{{(!isNew ? 'Edit existing' : 'Add a new') + ' board'}}</h1>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+
+        <mat-tab label="Board's Name">
+            <div class="form">
+                <mat-form-field>
+                    <input matInput placeholder="Board Name" [formControl]="ctlName" required>
+                    <mat-error class="field-error" *ngIf="ctlName.hasError('required')">Required</mat-error>
+                    <mat-error class="field-error" *ngIf="ctlName.hasError('minlength')">Mini 3 chars</mat-error>
+                    <mat-error class="field-error" *ngIf="ctlName.hasError('maxlength')">Maxi 20 chars</mat-error>
+                </mat-form-field>
+            </div>
+        </mat-tab>
+
+        <mat-tab label="Collaborations">
+            <mat-form-field appearance="fill" *ngIf="isNew">
+                <mat-label>Users</mat-label>
+                <mat-select [formControl]="ctlCollabs" multiple>
+                    <mat-option *ngFor=" let user of listUsers " [value]="user.id">{{user?.pseudo}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" *ngIf="!isNew">
+                <mat-label>Users</mat-label>
+                <mat-select [formControl]="ctlCollabs" multiple>
+                    <mat-option *ngFor=" let user of listUsers " [value]="user.id">{{user?.pseudo}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </mat-tab>
+    </mat-tab-group>
+
+    <div class="footer ">
+        <button type="submit " color="primary" mat-button form="formBoard" [disabled]="formBoard.pristine || formBoard.invalid || formBoard.pending " (click)="update() ">{{!isNew ? 'Update' : 'Add'}}</button>
+        <button type="reset " color="primary" mat-button (click)="cancel() ">Cancel</button>
+    </div>
+</form>

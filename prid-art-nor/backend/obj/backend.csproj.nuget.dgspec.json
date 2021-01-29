@@ -1,0 +1,165 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Norman\\Desktop\\EPFC\\PRID\\art-nor\\projet-prid\\prid-art-nor\\backend\\backend.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Norman\\Desktop\\EPFC\\PRID\\art-nor\\projet-prid\\prid-art-nor\\backend\\backend.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Norman\\Desktop\\EPFC\\PRID\\art-nor\\projet-prid\\prid-art-nor\\backend\\backend.csproj",
+        "projectName": "backend",
+        "projectPath": "C:\\Users\\Norman\\Desktop\\EPFC\\PRID\\art-nor\\projet-prid\\prid-art-nor\\backend\\backend.csproj",
+        "packagesPath": "C:\\Users\\Norman\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Norman\\Desktop\\EPFC\\PRID\\art-nor\\projet-prid\\prid-art-nor\\backend\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Norman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\Norman\\Desktop\\EPFC\\PRID\\art-nor\\projet-prid\\prid-art-nor\\PRID_Framework\\PRID_Framework.csproj": {
+                "projectPath": "C:\\Users\\Norman\\Desktop\\EPFC\\PRID\\art-nor\\projet-prid\\prid-art-nor\\PRID_Framework\\PRID_Framework.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
+            "Microsoft.AspNetCore.SpaServices.Extensions": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Proxies": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "D:\\PRID2021\\tools\\dotnet-sdk-3.1.302-win-x64\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Norman\\Desktop\\EPFC\\PRID\\art-nor\\projet-prid\\prid-art-nor\\PRID_Framework\\PRID_Framework.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Norman\\Desktop\\EPFC\\PRID\\art-nor\\projet-prid\\prid-art-nor\\PRID_Framework\\PRID_Framework.csproj",
+        "projectName": "PRID_Framework",
+        "projectPath": "C:\\Users\\Norman\\Desktop\\EPFC\\PRID\\art-nor\\projet-prid\\prid-art-nor\\PRID_Framework\\PRID_Framework.csproj",
+        "packagesPath": "C:\\Users\\Norman\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Norman\\Desktop\\EPFC\\PRID\\art-nor\\projet-prid\\prid-art-nor\\PRID_Framework\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Norman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "D:\\PRID2021\\tools\\dotnet-sdk-3.1.302-win-x64\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
